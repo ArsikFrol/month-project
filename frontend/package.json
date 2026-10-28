@@ -7,6 +7,7 @@
         "publish": "clo publish http 3000"
     },
     "dependencies": {
+        "@hookform/resolvers": "^6.0.2",
         "axios": "^1.20.0",
         "clsx": "^2.1.1",
         "lucide-react": "^1.62.0",
@@ -14,9 +15,12 @@
         "next-auth": "^5.0.0-beta.32",
         "react": "19.3.0",
         "react-dom": "19.3.0",
+        "react-hook-form": "^7.91.0",
+        "react-hot-toast": "^2.6.1",
         "react-spinners": "^0.17.1",
         "react-use": "^17.6.1",
         "tailwind-merge": "^3.7.0",
+        "zod": "^4.6.7",
         "zustand": "^5.0.16"
     },
     "devDependencies": {

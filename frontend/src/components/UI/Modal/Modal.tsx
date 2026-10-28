@@ -1,8 +1,9 @@
-import { cn } from "@/lib/utils"
 import { useRef, useState } from "react"
+import { useClickAway } from "react-use"
+
+import { cn } from "@/lib/utils"
 import { Wardrobe } from "./Furniture/Wardrobe"
 import { Refrigerator } from "./Furniture/Refrigerator"
-import { useClickAway } from "react-use"
 import { useEscape } from "@/hooks/useEscape"
 
 type Props = {

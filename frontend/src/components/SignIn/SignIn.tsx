@@ -1,24 +1,34 @@
 'use client'
 
 import { cn } from "@/lib/utils"
-import { signIn } from "next-auth/react"
+import { Services } from "../UI/Services"
+import { Form } from "./Form"
+import { Btn } from "./Btn"
 
 export function SignIn() {
     return (
-        <div className='flex flex-col gap-y-[10px]'>
+        <div className={cn(
+            'h-screen bg-pink-100'
+        )}>
             <div className={cn(
-                'relative flex items-center gap-x-[20px] bg-white py-[10px] px-[20px] rounded-2xl',
-                'hover:translate-y-[2px] transition-transform duration-300 cursor-pointer'
-            )} onClick={() => signIn('google', { callbackUrl: '' })}>
-
-                <div className='w-full text-center'>Google</div>
-            </div>
-            <div className={cn(
-                'relative flex items-center gap-x-[20px] bg-[#F6F8FA] py-[10px] px-[20px] rounded-2xl',
-                'hover:translate-y-[2px] transition-transform duration-300 cursor-pointer'
-            )} onClick={() => signIn('github', { callbackUrl: '' })}>
-
-                <div className='text-[#24292F] w-full text-center'>GitHub</div>
+                'absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2',
+                'bg-[rgba(232,235,215,1)] rounded-4xl p-[20px] w-[400px]'
+            )}>
+                <div className=''>
+                    <div className='text-[18px] font-medium text-center'>Sign in to the account</div>
+                    <div className='text-gray-700 text-center'>Enter your email to sign up for this app</div>
+                    <Form />
+                    <div className='flex items-center gap-x-[10px] my-[20px]'>
+                        <div className='h-[1px] w-full bg-gray-300'></div>
+                        <div className='flex-shrink-0 text-[14px] text-gray-500'>or continue with</div>
+                        <div className='h-[1px] w-full bg-gray-300'></div>
+                    </div>
+                    <Services />
+                    <Btn />
+                    <div className='text-[14px] text-center mt-[20px]'>
+                        By clicking continue, you agree to our Terms of Service and Privacy Policy
+                    </div>
+                </div>
             </div>
         </div>
     )

@@ -40,7 +40,7 @@ const list: Ingredient[] = [
 export function Refrigerator({ error, setError }: Props) {
     const [value, setValue] = useState<string>('')
 
-    const { listIngredient, loading } = useGetIngredient('refrigerator')
+    const { listIngredient, loading } = useGetIngredient('refrigerator', value)
 
     /* if (loading) return <ClipLoaderUI />
     if (error) return

@@ -10,7 +10,7 @@ type TReturn = {
     error: Error | undefined
 }
 
-export function useGetIngredient(furnitureType: FurnitureType): TReturn {
+export function useGetIngredient(furnitureType: FurnitureType, search: string): TReturn {
     const [listIngredient, setListIngredient] = useState<Ingredient[]>()
     const [loading, setLoading] = useState(true)
     const [error, setError] = useState<Error>()
@@ -18,7 +18,7 @@ export function useGetIngredient(furnitureType: FurnitureType): TReturn {
     useEffect(() => {
         async function fetchListIngredient() {
             try {
-                const { data } = await Api.ingredients.getIngredients(furnitureType)
+                const { data } = await Api.ingredients.getIngredients(furnitureType, search)
                 setListIngredient(data)
             } catch (err) {
                 setError(err as Error)
@@ -28,7 +28,7 @@ export function useGetIngredient(furnitureType: FurnitureType): TReturn {
         }
 
         fetchListIngredient()
-    }, [furnitureType])
+    }, [furnitureType, search])
 
     return { listIngredient, loading, error }
 }

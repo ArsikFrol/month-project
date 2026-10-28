@@ -11,7 +11,7 @@ import { Refrigerator } from "./Refrigerator";
 export function Home() {
     return (
         <div className={cn(
-            'h-screen bg-pink-100 grid gap-x-[50px]',
+            'h-screen bg-pink-100 gap-x-[50px]',
             'flex justify-center gap-x-[50px]'
         )}>
             <div className=' flex items-center justify-center'>

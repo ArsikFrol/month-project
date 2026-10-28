@@ -8,6 +8,7 @@ import { Products } from "./Products"
 import { Ingredient } from "@/store/Ingredients/types"
 
 import milk from '../../../../../public/milk.png'
+import { useGetIngredient } from "@/hooks/Ingredient"
 
 type Props = {
     error: boolean,
@@ -38,6 +39,8 @@ const list: Ingredient[] = [
 
 export function Wardrobe({ error, setError }: Props) {
     const [value, setValue] = useState<string>('')
+
+    const { listIngredient, loading } = useGetIngredient('wardrobe', value)
 
     return (
         <div className={cn(
