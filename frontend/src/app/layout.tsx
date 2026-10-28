@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Roboto } from "next/font/google";
 import "./globals.css";
 import { Provider } from "@/components/Provider";
-import { JSX } from "react/jsx-runtime";
+import type { ReactNode } from "react";
 
 const roboto = Roboto({
     variable: "--font-roboto",
@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     title: "Month project",
 };
 
-export default function RootLayout({ children }: { children: JSX.Element }) {
+export default function RootLayout({ children }: { children: ReactNode }) {
     return (
         <html lang="en" className={roboto.variable}>
             <body>

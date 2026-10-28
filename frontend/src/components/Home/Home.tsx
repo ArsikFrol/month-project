@@ -1,4 +1,4 @@
-import { Header } from "../Header/Header";
+
 import { Ingredients } from "./Ingredients/Ingredients";
 import { Oven } from "./Oven";
 import { RangeHood } from "./RangeHood";
@@ -11,7 +11,7 @@ import { Refrigerator } from "./Refrigerator";
 export function Home() {
     return (
         <div className={cn(
-            'h-screen bg-pink-100 gap-x-[50px]',
+            'min-h-[calc(100vh-78px)] max-[900px]:min-h-[calc(100vh-65px)] bg-pink-100 gap-x-[50px]',
             'flex justify-center gap-x-[50px]'
         )}>
             <div className=' flex items-center justify-center'>
@@ -35,3 +35,4 @@ export function Home() {
         </div>
     )
 }
+

@@ -1,8 +1,8 @@
 import { SessionProvider } from "next-auth/react"
 import { Toaster } from "react-hot-toast"
-import { JSX } from "react/jsx-runtime"
+import type { ReactNode } from "react"
 
-export function Provider({ children }: { children: JSX.Element }) {
+export function Provider({ children }: { children: ReactNode }) {
     return (
         <SessionProvider>
             {children}
