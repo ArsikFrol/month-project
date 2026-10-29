@@ -3,13 +3,11 @@ import Link from "next/link";
 
 export default function NotFound() {
     return (
-        <div
-            className="min-h-screen bg-[#e6ead4] font-[Nunito,sans-serif] text-[#354c32]"
+        <div className="min-h-screen bg-[#e6ead4] font-[Nunito,sans-serif] text-[#354c32]"
             style={{
                 backgroundImage: "linear-gradient(145deg,#f0f0dc 25%,transparent 25%),linear-gradient(325deg,#dce5c9 25%,transparent 25%)",
                 backgroundSize: "90px 90px",
-            }}
-        >
+            }} >
             <div className="mx-auto min-h-screen max-w-[1200px] bg-[#f9f4e2] shadow-[0_0_70px_#5b70402a]">
                 <header className="flex h-[70px] items-center justify-between gap-2 border-b-[3px] border-[#d9ddc3] bg-[#fbf6e6] px-4 sm:h-[78px] sm:gap-4 sm:px-[5%]">
                     <Link href="/" className="flex min-w-0 items-center gap-2 no-underline sm:gap-3" aria-label="По полочкам — на главную">

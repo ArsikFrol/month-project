@@ -5,6 +5,7 @@ import { cn } from "@/lib/utils"
 import { delateRecipe } from "@/services/recipe"
 
 export function Btns({ id }: { id: string }) {
+
     const clickDelete = async () => {
         await delateRecipe(id)
 

@@ -1,16 +1,12 @@
-@import "./kitchen-fonts.css";
 @import "tailwindcss";
-
 
 @theme inline {
     --font-sans: var(--font-roboto), sans-serif;
 }
 
 @theme {
-    /* 1. Объявляем переменную анимации. Точка с запятой в конце обязательна! */
     --animate-shake: shake 0.3s ease-in-out;
 
-    /* 2. Ключевые кадры пишутся с маленькой буквы @keyframes */
     @keyframes shake {
 
         0%,
