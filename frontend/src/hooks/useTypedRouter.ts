@@ -5,6 +5,9 @@ export type TypeRoutes =
     '/'
     | '/signIn'
     | '/signUp'
+    | '/favourites'
+    | '/profile'
+    | '/profile#history'
 
 type TypedRouter = Omit<AppRouterInstance, 'push' | 'replace'> & {
     push: (path: TypeRoutes) => ReturnType<AppRouterInstance['push']>;
