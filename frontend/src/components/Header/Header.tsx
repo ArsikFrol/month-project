@@ -66,41 +66,30 @@ export function Header() {
     return (
         <header className={cn(
             "relative z-30 flex h-[78px] items-center justify-between gap-3",
-            "border-b-4 border-[#b5874e] px-[3.2%]",
-            "bg-[linear-gradient(155deg,#fdf4d7_0_66%,#f5e3b5_66%_72%,#faedce_72%)]",
-            "shadow-[0_4px_0_#ead2a5,0_7px_12px_#75532920]",
-            "max-[900px]:h-[65px] max-[900px]:border-b-[3px] max-[900px]:px-4"
+            "border-b border-amber-200 bg-amber-50 px-4 md:px-8",
+            "max-[900px]:h-[65px]"
         )}>
             <button
                 type="button"
                 onClick={() => navigate("/")}
                 aria-label="По полочкам — на главную"
                 className={cn(
-                    "group flex min-w-0 items-center gap-2.5 text-left",
-                    "rounded-xl focus-visible:outline-2 focus-visible:outline-offset-4",
-                    "focus-visible:outline-[#cf833b]"
+                    "group flex min-w-0 items-center gap-3 text-left",
+                    "rounded-lg focus-visible:outline-2 focus-visible:outline-offset-4"
                 )}
             >
                 <span className={cn(
-                    "grid size-[46px] shrink-0 -rotate-6 place-items-center",
-                    "rounded-[15px_12px_14px_11px] border-2 border-[#47733a]",
-                    "bg-[linear-gradient(145deg,#8fbd64_0_45%,#5d954b_46%_75%,#437a3b_76%)]",
-                    "text-[#f8f4d6] shadow-[inset_2px_3px_#b9d991,0_4px_0_#365e31]",
-                    "transition-transform duration-300 group-hover:rotate-6 group-hover:scale-105",
-                    "motion-reduce:transition-none motion-reduce:group-hover:transform-none",
-                    "max-[900px]:size-[39px]"
+                    "grid size-10 shrink-0 place-items-center rounded-xl bg-green-700 text-white",
+                    "motion-safe:transition-transform motion-safe:group-hover:scale-105"
                 )}>
                     <Sparkles aria-hidden="true" size={25} />
                 </span>
                 <span className={cn(
-                    "whitespace-nowrap text-xl font-extrabold leading-none",
-                    "tracking-tight text-[#2e673b] max-[900px]:text-lg"
+                    "whitespace-nowrap text-lg font-bold leading-none text-green-800",
+                    "sm:text-xl"
                 )}>
-                    по<span className="text-[#df6e2e]">полочкам</span>
-                    <small className={cn(
-                        "mt-1.5 block text-[8px] font-bold tracking-[.18em] text-[#6e8757]",
-                        "max-[900px]:text-[7px] max-[480px]:tracking-[.1em]"
-                    )}>
+                    по<span className="text-orange-600">полочкам</span>
+                    <small className="mt-1 block text-[9px] font-medium tracking-wider text-green-700">
                         КУХНЯ ПОЛНА ИДЕЙ
                     </small>
                 </span>
@@ -122,13 +111,9 @@ export function Header() {
                     aria-controls="profile-menu"
                     onClick={() => setMenuOpen((open) => !open)}
                     className={cn(
-                        "flex items-center gap-2 rounded-xl border-2 border-[#93be79]",
-                        "bg-[linear-gradient(#f1fadf,#cee8b6)] px-3 py-2",
-                        "text-sm font-extrabold text-[#4d8340]",
-                        "shadow-[inset_0_2px_#fff,0_3px_0_#83a76c]",
-                        "transition hover:brightness-105 active:translate-y-0.5",
-                        "focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#cf833b]",
-                        "motion-reduce:transition-none"
+                        "flex items-center gap-2 rounded-lg bg-green-100 px-3 py-2",
+                        "text-sm font-bold text-green-800 hover:bg-green-200",
+                        "focus-visible:outline-2 focus-visible:outline-offset-2"
                     )}
                 >
                     <UserRound aria-hidden="true" size={18} />
@@ -137,7 +122,7 @@ export function Header() {
                         aria-hidden="true"
                         size={16}
                         className={cn(
-                            "transition-transform motion-reduce:transition-none",
+                            "motion-safe:transition-transform",
                             menuOpen && "rotate-180"
                         )}
                     />
@@ -147,12 +132,11 @@ export function Header() {
                     <div
                         id="profile-menu"
                         className={cn(
-                            "absolute right-0 top-[calc(100%+12px)] w-56",
-                            "rounded-2xl border-2 border-[#b8cf9e] bg-[#fffaf0] p-2",
-                            "shadow-[0_5px_0_#a9c398,0_12px_24px_#405e3133]"
+                            "absolute right-0 top-full mt-2 w-56 rounded-xl p-2",
+                            "border border-green-200 bg-white shadow-lg"
                         )}
                     >
-                        <p className="px-3 py-2 text-xs font-bold text-[#8b9a7c]">
+                        <p className="px-3 py-2 text-xs font-medium text-gray-500">
                             {accountLabel}
                         </p>
                         <nav aria-label="Меню профиля" className="grid gap-1">
@@ -162,10 +146,9 @@ export function Header() {
                                     type="button"
                                     onClick={() => navigate(path)}
                                     className={cn(
-                                        "flex w-full items-center gap-3 rounded-xl px-3 py-2.5",
-                                        "text-left text-sm font-bold text-[#46683e]",
-                                        "hover:bg-[#edf4df] focus-visible:bg-[#edf4df]",
-                                        "focus-visible:outline-2 focus-visible:outline-[#91b675]"
+                                        "flex w-full items-center gap-3 rounded-lg px-3 py-2",
+                                        "text-left text-sm text-green-800 hover:bg-green-50",
+                                        "focus-visible:outline-2 focus-visible:outline-green-600"
                                     )}
                                 >
                                     <Icon aria-hidden="true" size={18} />
