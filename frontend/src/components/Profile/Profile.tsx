@@ -13,7 +13,7 @@ export function Profile() {
     return (
         <main className="min-h-[calc(100vh-78px)] bg-[#f5eedb] px-5 py-10 text-[#385339]">
             <div className="mx-auto max-w-[900px]">
-                <p className="text-xs font-bold tracking-widest text-[#819770]">
+                <p className="text-xs font-bold text-[#819770]">
                     ВАШ УГОЛОК
                 </p>
                 <h1 className="mt-2 text-3xl font-bold sm:text-4xl">
@@ -75,7 +75,7 @@ export function Profile() {
                             <Heart aria-hidden="true" className="text-[#d58b59]" />
                             <h2 className="text-xl font-bold">Избранное</h2>
                         </div>
-                        <p className="mt-3 text-sm leading-relaxed text-[#718469]">
+                        <p className="mt-3 text-sm text-[#718469]">
                             Перейдите к рецептам в разделе избранного.
                         </p>
                         <button

@@ -23,8 +23,6 @@ const recipes: Recipe[] = [
 export function Favourites() {
     const [showElemId, setShowElemId] = useState<string>('')
 
-
-
     return (
         <Container>
             <>
