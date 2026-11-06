@@ -6,9 +6,15 @@ export type Ingredient = {
     image: string | StaticImageData
 }
 
-export type UseIngredients = {
+export type UseProducts = {
     ingredients: Ingredient[]
     toggleIngredient: (value: Ingredient) => void,
 
-    clearIngredients: () => void
+    clearIngredients: () => void,
+
+
+    allergens: Ingredient[],
+    toggleAllergens: (value: Ingredient) => void,
+
+    alearAllergens: () => void,
 }

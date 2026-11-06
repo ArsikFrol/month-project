@@ -1,10 +1,10 @@
 'use client'
 
 import Image from "next/image"
+import { useState } from "react"
 
 import { cn } from "@/lib/utils"
 import { Ingredient } from "@/store/Ingredients/types"
-import { useState } from "react"
 
 type Props = {
     toggleIngredient: (obj: Ingredient) => void

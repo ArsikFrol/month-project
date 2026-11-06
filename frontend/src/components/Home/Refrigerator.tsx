@@ -13,8 +13,7 @@ export function Refrigerator() {
         <div className="">
             <Image src={refrigerator} alt='' draggable='false' onClick={() => setShowModal(true)}
                 className='mt-[100px] w-[250px] h-[500px] hover:scale-101 transition-transform duration-300 cursor-pointer' />
-            <Modal setShowModal={setShowModal}
-                showModal={showModal} />
+            <Modal setShowModal={setShowModal} showModal={showModal} />
         </div>
     )
 }

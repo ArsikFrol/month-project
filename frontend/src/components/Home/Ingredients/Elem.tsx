@@ -1,6 +1,7 @@
-import { cn } from "@/lib/utils";
-import { Ingredient } from "@/store/Ingredients/types";
 import { X } from "lucide-react";
+
+import { cn } from "@/lib/utils";
+import { Ingredient } from "@/store/Products/types";
 
 type Props = {
     obj: Ingredient,

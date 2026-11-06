@@ -3,12 +3,11 @@ import Image from "next/image"
 import { useState } from "react"
 
 import openWardrobe from '../../../../../public/openWardrobe.png'
+import milk from '../../../../../public/milk.png'
 
 import { Products } from "./Products"
-import { Ingredient } from "@/store/Ingredients/types"
-
-import milk from '../../../../../public/milk.png'
 import { useGetIngredient } from "@/hooks/Ingredient"
+import { Ingredient } from "@/store/Products/types"
 
 type Props = {
     error: boolean,

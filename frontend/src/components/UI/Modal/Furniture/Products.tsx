@@ -1,9 +1,9 @@
 'use client'
 
-import { Ingredient } from "@/store/Ingredients/types"
-import useIngredients from "@/store/Ingredients/useIngredients"
 
+import { Ingredient } from "@/store/Products/types"
 import { Elem } from "./Elem"
+import useProducts from "@/store/Products/useProducts"
 
 type Props = {
     setError: (value: boolean) => void,
@@ -18,7 +18,7 @@ type Props = {
 
 export function Products({ setError, height, paddingTop, paddingBottom, paddingX, listProducts }: Props) {
 
-    const { ingredients, toggleIngredient } = useIngredients((s) => s)
+    const { ingredients, toggleIngredient } = useProducts((s) => s)
 
     return (
         <div className='relative z-20 grid grid-cols-3 gap-y-[40px] overflow-auto'

@@ -6,9 +6,9 @@ import openRefrigerator from '../../../../../public/openRefrigerator.png'
 import { ClipLoaderUI } from "@/components/UI/ClipLoader"
 import { Products } from "./Products"
 import { useGetIngredient } from "@/hooks/Ingredient"
-import { Ingredient } from "@/store/Ingredients/types"
 
 import milk from '../../../../../public/milk.png'
+import { Ingredient } from "@/store/Products/types"
 
 type Props = {
     error: boolean,

@@ -1,12 +1,10 @@
-
-import { Ingredients } from "./Ingredients/Ingredients";
 import { Oven } from "./Oven";
 import { RangeHood } from "./RangeHood";
 import { Sink } from "./Sink";
-import { Table } from "./Table";
 import { cn } from "@/lib/utils";
 import { Wardrobe } from "./Wardrobe";
 import { Refrigerator } from "./Refrigerator";
+import { Products } from "./Products/Products";
 
 export function Home() {
     return (
@@ -30,7 +28,7 @@ export function Home() {
                 </div>
             </div>
             <div className='flex items-center'>
-                <Ingredients />
+                <Products />
             </div>
         </div>
     )
