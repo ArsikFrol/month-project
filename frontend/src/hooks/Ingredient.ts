@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 
 import { Api } from '@/services/api-client'
-import { Ingredient } from '@/store/Ingredients/types'
+import { Ingredient } from '@/store/Products/types'
 import { FurnitureType } from '@/services/ingredients'
 
 type TReturn = {

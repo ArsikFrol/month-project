@@ -40,6 +40,8 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
 
                     return {
                         id: String(user.id),
+                        name: user.name ?? null,
+                        email: user.email ?? null,
                     }
 
                 } catch (error) {

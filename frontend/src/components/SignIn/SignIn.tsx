@@ -8,11 +8,11 @@ import { Btn } from "./Btn"
 export function SignIn() {
     return (
         <div className={cn(
-            'h-screen bg-pink-100'
+            'flex min-h-[calc(100vh-78px)] items-center justify-center bg-pink-100 p-4',
+            'max-[900px]:min-h-[calc(100vh-65px)]'
         )}>
             <div className={cn(
-                'absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2',
-                'bg-[rgba(232,235,215,1)] rounded-4xl p-[20px] w-[400px]'
+                'w-full max-w-[400px] rounded-4xl bg-[rgba(232,235,215,1)] p-[20px]'
             )}>
                 <div className=''>
                     <div className='text-[18px] font-medium text-center'>Sign in to the account</div>

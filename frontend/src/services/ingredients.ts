@@ -1,5 +1,5 @@
 
-import { Ingredient } from "@/store/Ingredients/types"
+import { Ingredient } from "@/store/Products/types"
 import { ApiRoutes } from "./constants"
 import { axiosInstance } from "./instance"
 
