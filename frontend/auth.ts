@@ -4,6 +4,7 @@ import Credentials from "next-auth/providers/credentials"
 
 import NextAuth from "next-auth"
 import { api } from "@/app/api/client"
+import { ApiRoutes } from "@/services/constants"
 
 type LoginResponse = {
     data: {
@@ -29,7 +30,7 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
 
                 try {
 
-                    const { data } = await api.post<LoginResponse>('/auth/login', {
+                    const { data } = await api.post<LoginResponse>(ApiRoutes.LOGIN, {
                         email: credentials.email,
                         password: credentials.password
                     })

@@ -13,12 +13,15 @@ type Props = {
     paddingBottom: number,
     paddingX: number,
 
-    listProducts: Ingredient[]
+    listProducts: Ingredient[] | undefined
 }
 
-export function Products({ setError, height, paddingTop, paddingBottom, paddingX, listProducts }: Props) {
+export function Products(
+    { setError, height, paddingTop, paddingBottom, paddingX, listProducts }: Props) {
 
     const { ingredients, toggleIngredient } = useProducts((s) => s)
+
+    if (!listProducts || listProducts.length === 0) return
 
     return (
         <div className='relative z-20 grid grid-cols-3 gap-y-[40px] overflow-auto'

@@ -3,43 +3,21 @@ import Image from "next/image"
 import { useState } from "react"
 
 import openWardrobe from '../../../../../public/openWardrobe.png'
-import milk from '../../../../../public/milk.png'
 
 import { Products } from "./Products"
 import { useGetIngredient } from "@/hooks/Ingredient"
-import { Ingredient } from "@/store/Products/types"
 
 type Props = {
     error: boolean,
     setError: (value: boolean) => void,
 }
 
-const list: Ingredient[] = [
-    { slug: '1', name: 'Молоко', image: milk },
-    { slug: '2', name: 'Молоко', image: milk },
-    { slug: '3', name: 'Молоко', image: milk },
-    { slug: '4', name: 'Молоко', image: milk },
-    { slug: '5', name: 'Молоко', image: milk },
-    { slug: '6', name: 'Молоко', image: milk },
-    { slug: '7', name: 'Молоко', image: milk },
-    { slug: '8', name: 'Молоко', image: milk },
-    { slug: '9', name: 'Молоко', image: milk },
-    { slug: '10', name: 'Молоко', image: milk },
-    { slug: '11', name: 'Молоко', image: milk },
-    { slug: '12', name: 'Молоко', image: milk },
-    { slug: '13', name: 'Молоко', image: milk },
-    { slug: '14', name: 'Молоко', image: milk },
-    { slug: '15', name: 'Молоко', image: milk },
-    { slug: '16', name: 'Молоко', image: milk },
-    { slug: '17', name: 'Молоко', image: milk },
-    { slug: '18', name: 'Молоко', image: milk },
-    { slug: '19', name: 'Молоко', image: milk }
-]
-
 export function Wardrobe({ error, setError }: Props) {
     const [value, setValue] = useState<string>('')
 
     const { listIngredient, loading } = useGetIngredient('wardrobe', value)
+
+    console.log(listIngredient)
 
     return (
         <div className={cn(
@@ -77,7 +55,7 @@ export function Wardrobe({ error, setError }: Props) {
                 Можно выбрать не больше 4 ингредиентов
             </div>
             <Products setError={setError} height={350} paddingTop={80} paddingBottom={10}
-                paddingX={100} listProducts={list} />
+                paddingX={100} listProducts={listIngredient} />
         </div>
     )
 }
