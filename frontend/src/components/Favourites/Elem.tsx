@@ -1,3 +1,5 @@
+'use client'
+
 import { Recipe } from "@/types/recipe"
 import Image from "next/image"
 

@@ -6,18 +6,49 @@ import openWardrobe from '../../../../../public/openWardrobe.png'
 
 import { Products } from "./Products"
 import { useGetIngredient } from "@/hooks/Ingredient"
+import { Ingredient } from "@/store/Products/types"
+
+import milk from '../../../../../public/milk.png'
 
 type Props = {
     error: boolean,
     setError: (value: boolean) => void,
 }
 
+const list: Ingredient[] = [
+    { slug: 'flour', name: 'Мука', emoji: '🌾' },
+    { slug: 'sugar', name: 'Сахар', emoji: '🍬' },
+    { slug: 'salt', name: 'Соль', emoji: '🧂' },
+    { slug: 'rice', name: 'Рис', emoji: '🍚' },
+    { slug: 'buckwheat', name: 'Гречка', emoji: '🌾' },
+    { slug: 'pasta', name: 'Макароны', emoji: '🍝' },
+    { slug: 'oats', name: 'Овсянка', emoji: '🥣' },
+    { slug: 'bread', name: 'Хлеб', emoji: '🍞' },
+    { slug: 'crackers', name: 'Печенье', emoji: '🍪' },
+    { slug: 'tea', name: 'Чай', emoji: '🍵' },
+    { slug: 'coffee', name: 'Кофе', emoji: '☕' },
+    { slug: 'cocoa', name: 'Какао', emoji: '🍫' },
+    { slug: 'honey', name: 'Мёд', emoji: '🍯' },
+    { slug: 'jam', name: 'Варенье', emoji: '🍓' },
+    { slug: 'nuts', name: 'Орехи', emoji: '🥜' },
+    { slug: 'dried-fruits', name: 'Сухофрукты', emoji: '🍇' },
+    { slug: 'canned-food', name: 'Консервы', emoji: '🥫' },
+    { slug: 'oil', name: 'Масло растительное', emoji: '🫒' },
+    { slug: 'vinegar', name: 'Уксус', emoji: '🍶' },
+    { slug: 'spices', name: 'Специи', emoji: '🌶️' },
+    { slug: 'baking-soda', name: 'Сода', emoji: '🧂' },
+    { slug: 'yeast', name: 'Дрожжи', emoji: '🍞' },
+    { slug: 'chocolate', name: 'Шоколад', emoji: '🍫' },
+    { slug: 'cereal', name: 'Хлопья', emoji: '🥣' },
+    { slug: 'chips', name: 'Чипсы', emoji: '🍟' },
+]
+
 export function Wardrobe({ error, setError }: Props) {
     const [value, setValue] = useState<string>('')
 
-    const { listIngredient, loading } = useGetIngredient('wardrobe', value)
+    /* const { listIngredient, loading } = useGetIngredient('wardrobe', value)
 
-    console.log(listIngredient)
+    console.log(listIngredient) */
 
     return (
         <div className={cn(
@@ -55,7 +86,7 @@ export function Wardrobe({ error, setError }: Props) {
                 Можно выбрать не больше 4 ингредиентов
             </div>
             <Products setError={setError} height={350} paddingTop={80} paddingBottom={10}
-                paddingX={100} listProducts={listIngredient} />
+                paddingX={100} listProducts={list} />
         </div>
     )
 }

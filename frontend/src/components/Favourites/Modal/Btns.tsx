@@ -1,10 +1,16 @@
+'use client'
+
 import { Share2, Trash } from "lucide-react"
 import toast from "react-hot-toast"
 
 import { cn } from "@/lib/utils"
 import { delateRecipe } from "@/services/recipe"
+import { usePathname } from "next/navigation"
 
 export function Btns({ id }: { id: string }) {
+
+    const pathName = usePathname()
+    const hiddenDelete = pathName.split('/')[1]
 
     const clickDelete = async () => {
         await delateRecipe(id)
@@ -28,7 +34,8 @@ export function Btns({ id }: { id: string }) {
             <div className={cn(
                 'group hover:translate-y-[-2px] transition-transform duration-300 cursor-pointer',
                 'w-[300px] h-[50px] bg-red-400 rounded-2xl flex items-center justify-center',
-                'flex items-center gap-x-[10px]'
+                'flex items-center gap-x-[10px]',
+                hiddenDelete === 'recipes' && 'hidden'
             )} onClick={clickDelete}>
                 <div className='text-[18px] font-light text-white'>Удалить из избранного</div>
                 <Trash strokeWidth={1} className={cn(

@@ -8,6 +8,7 @@ export type TypeRoutes =
     | '/favourites'
     | '/profile'
     | '/history'
+    | '/recipes'
 
 type TypedRouter = Omit<AppRouterInstance, 'push' | 'replace'> & {
     push: (path: TypeRoutes) => ReturnType<AppRouterInstance['push']>;

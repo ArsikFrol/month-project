@@ -4,17 +4,19 @@ import { useState } from "react"
 
 import { cn } from "@/lib/utils"
 import { Modal } from "../Allergens/Modal"
+import { useTypedRouter } from "@/hooks/useTypedRouter"
 
 type Props = {
 
 }
 
 export function Btn(props: Props) {
+    const router = useTypedRouter()
 
     const [showModal, setShowModal] = useState<boolean>(false)
 
     const clickFind = () => {
-
+        router.push('/recipes')
     }
 
     const clickExclude = () => {

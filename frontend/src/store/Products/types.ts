@@ -1,9 +1,7 @@
-import { StaticImageData } from "next/image"
-
 export type Ingredient = {
     slug: string
     name: string,
-    image: string | StaticImageData
+    emoji: string
 }
 
 export type UseProducts = {

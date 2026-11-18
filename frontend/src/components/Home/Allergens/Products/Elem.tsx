@@ -40,11 +40,10 @@ export function Elem({ countObjs, toggleAllergens, isSelected, obj, setError }: 
                 : 'opacity-70 scale-[90%]',
             animate && 'animate-shake'
         )} onClick={clickElem}>
-            <Image src={obj.image} alt='' draggable='false'
-                className="w-[50px] h-[100px] mx-auto" />
+            <div className='text-[65px] text-center leading-none h-[100px]'>{obj.emoji}</div>
             <div className={cn(
-                'text-[14px] text-center font-light transition-[opacity] duration-300',
-                'bg-white rounded-2xl shadow py-[2px] px-[10px] w-fit',
+                'text-[14px] text-center font-light mx-auto w-[100px] transition-[opacity] duration-300',
+                'bg-white rounded-2xl shadow py-[2px] px-[10px]',
                 'absolute -left-1/5 bottom-0',
             )}>{obj.name}</div>
         </div>
