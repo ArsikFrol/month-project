@@ -4,7 +4,7 @@ from fastapi.responses import JSONResponse
 
 from app import config
 from app.schemas import ErrorResponse, RecipeSearchRequest, RecipeSearchResponse
-from app.services import mealdb, recipe_logic
+from app.services import mealdb, recipe_logic, recipe_normalizer
 
 router = APIRouter()
 
@@ -41,7 +41,6 @@ def search_recipes(request: RecipeSearchRequest):
         )
 
     selected_names = [catalog[slug]["mealDbName"] for slug in request.ingredients]
-    avoid_names = [catalog[slug]["mealDbName"] for slug in request.avoid]
 
     try:
         found = {}
@@ -60,15 +59,20 @@ def search_recipes(request: RecipeSearchRequest):
             if not meal:
                 continue
 
-            recipe_names = recipe_logic.recipe_ingredient_names(meal)
-
-            if recipe_logic.is_avoided(recipe_names, avoid_names):
+            # Подготовка рецепта силами модуля recipe_normalizer (backend-2):
+            # маппинг ингредиентов, шаги и проверка аллергенов.
+            # Рецепт с аллергеном вернётся как None — пропускаем его.
+            normalized = recipe_normalizer.normalize_recipe(meal, request, catalog)
+            if normalized is None:
                 continue
 
+            recipe_names = [
+                ing["name"] for ing in normalized["ingredients"]
+            ]
             matched = recipe_logic.matched_ingredients_count(
                 selected_names, recipe_names
             )
-            scored.append((matched, recipe_logic.build_recipe(meal)))
+            scored.append((matched, normalized))
 
         scored.sort(key=lambda pair: pair[0], reverse=True)
         recipes = [recipe for _, recipe in scored[: config.MAX_RESULTS]]
